@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Club de Tennis de Table</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo.png" type="image/png" style="border-radius: 50%">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <a href="index.html" title="Acceuil"><img src="logo.png" alt="Logo du Club" ></a>
+  </div>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="apropos.html">À propos</a></li>
+      <li><a href="equipes.html">Équipes</a></li>
+      <li><a href="calendrier.html">Calendrier</a></li>
+      <li><a href="resultats.html">Résultats</a></li>
+      <li><a href="adhesion.html">Adhésion</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="contact">
+    <h1>Contactez-nous</h1>
+    <p>Pour toute question, n'hésitez pas à nous contacter via le formulaire ci-dessous :</p>
+    <form action="submit_contact.php" method="POST">
+      <label for="nom">Nom:</label>
+      <input type="text" id="nom" name="nom" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+    <h2>Informations de contact</h2>
+    <p>Adresse : 123 Rue du Sport, Ville, Pays</p>
+    <p>Téléphone : +33 1 23 45 67 89</p>
+    <p>Email : contact@clubdetennisdetable.com</p>
+    <h2>Localisation</h2>
+    <!-- Ajouter une carte interactive -->
+  </section>
+</main>
+<footer>
+  <p>&copy; 2024 Club de Tennis de Table</p>
+</footer>
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    const toggle = document.querySelector('.menu-toggle');
+    nav.classList.toggle('show');
+    toggle.classList.toggle('change');
+  }
+
+</script>
+</body>
+
+</html>
