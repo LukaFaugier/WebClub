@@ -1,4 +1,3 @@
-/* Styles de base */
 body, html {
     margin: 0;
     padding: 0;
@@ -10,22 +9,33 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: transparent; /* Commencer avec un fond transparent */
     padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
 }
 
-.logo {
+.menu-container {
+    flex: 1;
     display: flex;
-    justify-content: initial;
-    flex-grow: 1;
+    justify-content: center;
 }
 
-.logo img {
-    width: 80px; /* Ajustez cette taille selon vos besoins */
-    height: 80px; /* Ajustez cette taille selon vos besoins */
-    border-radius: 50%; /* Cela rend l'image circulaire */
-    object-fit: cover; /* Assure que l'image s'adapte bien à la forme circulaire */
-    border: 2px solid white; /* Optionnel : ajoute une bordure blanche pour un meilleur effet */
+nav ul {
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li a {
+    color: gray; /* Couleur initiale du texte */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
 }
 
 .menu-toggle {
@@ -42,22 +52,25 @@ header {
     transition: 0.4s;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+.logo {
+    flex-grow: 0;
+    position: relative;
+    margin-top: -8px; /* Décalage vers le haut */
+    top: -10%; /* Décalage de 10% vers le haut */
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
+.logo img {
+    width: 80px; /* Ajustez cette taille selon vos besoins */
+    height: 80px; /* Ajustez cette taille selon vos besoins */
+    border-radius: 50%; /* Cela rend l'image circulaire */
+    object-fit: cover; /* Assure que l'image s'adapte bien à la forme circulaire */
+    border: 2px solid white; /* Optionnel : ajoute une bordure blanche pour un meilleur effet */
 }
 
 .slider-container, .slider {
     position: relative;
     width: 100%;
+    margin-top: 100px; /* Ajoutez cette marge supérieure pour compenser la hauteur de l'en-tête fixe */
 }
 
 .slider img {
@@ -85,6 +98,7 @@ nav ul li a {
 
 main {
     padding: 20px;
+    margin-top: 100px; /* Ajoutez cette marge supérieure pour compenser la hauteur de l'en-tête fixe */
 }
 
 h1, h2 {
@@ -97,6 +111,7 @@ footer {
     text-align: center;
     padding: 10px 0;
 }
+
 
 #club-info, #choices, .text-content {
     text-align: center;
@@ -146,6 +161,7 @@ footer {
 }
 
 /* Styles pour appareils de petite taille (téléphones) */
+
 @media (max-width: 768px) {
     header {
         flex-direction: row;
@@ -155,11 +171,13 @@ footer {
     .menu-toggle {
         display: flex;
         order: 2;
-        margin-left: 40%;
+        margin-right: 5%;
     }
 
+
     .logo {
-        margin-left: 40%;
+        position: static;
+        margin-right: 25%;
         order: 1;
         flex-grow: 1;
         display: flex;
@@ -177,8 +195,8 @@ footer {
         width: 100%;
         padding: 0;
         position: fixed;
-        top: 108px;
-        left: 00%;
+        top: 60px;
+        left: 0;
         background-color: darkgray;
         z-index: 1000;
         max-height: 0;
@@ -188,7 +206,7 @@ footer {
 
     nav ul.show {
         display: flex;
-        max-height: 500px; /* Adjust this value based on the number of menu items */
+        max-height: 500px; /* Ajuster cette valeur en fonction du nombre d'éléments du menu */
     }
 
     nav ul li {
@@ -211,5 +229,64 @@ footer {
 
     .menu-toggle.change .bar3 {
         transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+    nav ul.show {
+        display: flex;
+        max-height: 500px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+    }
+
+    .menu-toggle.change .bar1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.change .bar2 {
+        opacity: 0;
+    }
+
+    .menu-toggle.change .bar3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    main {
+        margin-top: 120px; /* Ajustez cette marge pour compenser la hauteur du header sur les petits écrans */
+    }
+
+@media (max-width: 450px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+    .menu-toggle {
+        display: flex;
+        order: 2;
+        margin-right: 5%;
+    }
+
+
+    .logo {
+        position: static;
+        margin-right: 25%;
+        order: 1;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    main {
+        margin-top: 120px; /* Ajustez cette marge pour compenser la hauteur du header sur les petits écrans */
     }
 }

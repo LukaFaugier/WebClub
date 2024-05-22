@@ -10,25 +10,28 @@
 <body>
 <header>
     <div class="logo">
-        <a href="index.html" title="Acceuil"><img src="logo.png" alt="Logo du Club" ></a>
+        <a href="index.html" title="Accueil"><img src="logo.png" alt="Logo du Club"></a>
+    </div>
+    <div class="menu-container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="equipes.html">Équipes</a></li>
+                <li><a href="calendrier.html">Calendrier</a></li>
+                <li><a href="resultats.html">Résultats</a></li>
+                <li><a href="adhesion.html">Adhésion</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
     </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="apropos.html">À propos</a></li>
-            <li><a href="equipes.html">Équipes</a></li>
-            <li><a href="calendrier.html">Calendrier</a></li>
-            <li><a href="resultats.html">Résultats</a></li>
-            <li><a href="adhesion.html">Adhésion</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
 </header>
+
 
 <main>
     <div class="slider-container">
@@ -104,6 +107,40 @@
         function closeModal() {
             document.getElementById("myModal").style.display = "none";
         }
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const links = document.querySelectorAll('nav ul li a');
+
+            if (window.scrollY > 0) {
+                header.style.backgroundColor = '#333'; // Couleur du header après défilement
+                links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
+            } else {
+                header.style.backgroundColor = 'transparent'; // Couleur du header au départ
+                links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
+            }
+        });
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const links = document.querySelectorAll('nav ul li a');
+            const menuToggleBars = document.querySelectorAll('.menu-toggle div');
+
+            if (window.scrollY > 0) {
+                header.style.backgroundColor = '#333'; // Couleur du header après défilement
+                links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
+                menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white'); // Couleur des barres du menu-toggle après défilement
+            } else {
+                header.style.backgroundColor = 'transparent'; // Couleur du header au départ
+                links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
+                menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray'); // Couleur des barres du menu-toggle au départ
+            }
+        });
+
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            const toggle = document.querySelector('.menu-toggle');
+            nav.classList.toggle('show');
+            toggle.classList.toggle('change');
+        }
     </script>
 
     <section id="club-info" >
@@ -136,7 +173,7 @@
             </div>
         </div>
     </section>
-    
+
     <section  id="club-info">
         <h1>Horaire</h1>
         <table style="margin-left:37%">
@@ -144,7 +181,7 @@
             <tr>
                 <th>Jour</th>
                 <th>Heure</th>
-                <th>Équipe</th>                
+                <th>Équipe</th>
             </tr>
             </thead>
             <tbody>
@@ -168,11 +205,10 @@
                 <td>Jeudi</td>
                 <td>17:00-22:00</td>
                 <td>Équipe Junior</td>
-            </tr>    
+            </tr>
             </tbody>
         </table>
     </section>
-    
 </main>
 <footer>
     <div class="social-links">
@@ -207,6 +243,26 @@
     }
 
 
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        const links = document.querySelectorAll('nav ul li a');
+
+        if (window.scrollY > 0) {
+            header.style.backgroundColor = '#333'; // Couleur du header après défilement
+            links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
+        } else {
+            header.style.backgroundColor = 'transparent'; // Couleur du header au départ
+            links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
+        }
+    });
+
+    function toggleMenu() {
+        const nav = document.querySelector('nav ul');
+        const toggle = document.querySelector('.menu-toggle');
+        nav.classList.toggle('show');
+        toggle.classList.toggle('change');
+    }
 </script>
 </body>
 </html>
