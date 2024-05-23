@@ -70,7 +70,7 @@ nav ul li a {
 .slider-container, .slider {
     position: relative;
     width: 100%;
-    margin-top: 100px; /* Ajoutez cette marge supérieure pour compenser la hauteur de l'en-tête fixe */
+    margin-top: 0px; /* Ajoutez cette marge supérieure pour compenser la hauteur de l'en-tête fixe */
 }
 
 .slider img {
