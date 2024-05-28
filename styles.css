@@ -64,13 +64,13 @@ nav ul li a {
     height: 80px; /* Ajustez cette taille selon vos besoins */
     border-radius: 50%; /* Cela rend l'image circulaire */
     object-fit: cover; /* Assure que l'image s'adapte bien à la forme circulaire */
-    border: 2px solid white; /* Optionnel : ajoute une bordure blanche pour un meilleur effet */
+   
 }
 
 .slider-container, .slider {
     position: relative;
     width: 100%;
-    margin-top: 0px; /* Ajoutez cette marge supérieure pour compenser la hauteur de l'en-tête fixe */
+    margin-top: 100px; /* Ajoutez cette marge supérieure pour compenser la hauteur de l'en-tête fixe */
 }
 
 .slider img {

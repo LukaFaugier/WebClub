@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil - Club de Tennis de Table</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="logos.png" type="image/png" style="border-radius: 50%;">
+    <link rel="icon" href="images/VallonPontDArcLogoBalle.png" type="image/png" style="border-radius: 50%;">
 </head>
 <body>
 <header>
     <div class="logo">
-        <a href="index.html" title="Accueil"><img src="logo.png" alt="Logo du Club"></a>
+        <a href="index.html" title="Accueil"><img src="images/VallonPontDArcLogoBalle.png" alt="Logo du Club"></a>
     </div>
     <div class="menu-container">
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
-               <!-- <li><a href="apropos.html">À propos</a></li>-->
+                <li><a href="apropos.html">À propos</a></li>
                 <li><a href="equipes.html">Équipes</a></li>
                 <li><a href="calendrier.html">Calendrier</a></li>
-                <li><a href="resultats.html">Résultats</a></li>
-               <!-- <li><a href="adhesion.html">Adhésion</a></li>-->
-               <!-- <li><a href="contact.html">Contact</a></li>-->
+                <li><a href="partenaires.html">Partenaires</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -64,6 +63,8 @@
         // Slider
         let slideIndex = 0;
         showSlides();
+        const menuToggleBars = document.querySelectorAll('.menu-toggle div');
+        menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray');
         function toggleMenu() {
             const nav = document.querySelector('nav ul');
             const toggle = document.querySelector('.menu-toggle');
@@ -135,12 +136,6 @@
             }
         });
 
-        function toggleMenu() {
-            const nav = document.querySelector('nav ul');
-            const toggle = document.querySelector('.menu-toggle');
-            nav.classList.toggle('show');
-            toggle.classList.toggle('change');
-        }
     </script>
 
     <section id="club-info" >

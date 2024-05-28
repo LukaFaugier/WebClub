@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Club de Tennis de Table</title>
+  <title>Résultats - Club de Tennis de Table</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="logo.png" type="image/png" style="border-radius: 50%">
   <link rel="icon" href="images/VallonPontDArcLogoBalle.png" type="image/png" style="border-radius: 50%;">
 </head>
 <body>
@@ -32,28 +31,37 @@
   </div>
 </header>
 
+
 <main>
-  <section id="contact">
-    <h1>Contactez-nous</h1>
-    <p>Pour toute question, n'hésitez pas à nous contacter via le formulaire ci-dessous :</p>
-    <form action="submit_contact.php" method="POST">
-      <label for="nom">Nom:</label>
-      <input type="text" id="nom" name="nom" required>
+  <section id="resultats">
+    <section id="choices">
+      <h2>Nos Partenaires Institutionnels</h2>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <div class="services">
+        <div class="service-item">
+          <img src="images/logo%20Partenaires/Logo_FFTT.png" alt="FFTT">
+        </div>
+        <div class="service-item">
+          <img src="images/logo%20Partenaires/Logo_AuvergneRhôneAlpes.png" alt="AuvergneRôneAples">
+        </div>
+        <div class="service-item">
+          <img src="images/logo%20Partenaires/Logo_ComitéDrômeArdèche.png" alt="Comité">
+        </div>
+      </div>
+      <div class="services">
+        <div class="service-item">
+          <img src="images/logo%20Partenaires/Logo_LigueAuvergneRhoneAlpes.png" alt="LigueAuvergne">
+        </div>
+        <div class="service-item">
+          <img src="images/logo%20Partenaires/LogoAgenceNationaleDuSport.png" alt="AgenceNationale">
+        </div>
+        <div class="service-item">
+          <img src="images/logo%20Partenaires/LogoArdèche.png" alt="Ardèche">
+        </div>
+      </div>
+    </section>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
 
-      <button type="submit">Envoyer</button>
-    </form>
-    <h2>Informations de contact</h2>
-    <p>Adresse : 123 Rue du Sport, Ville, Pays</p>
-    <p>Téléphone : +33 1 23 45 67 89</p>
-    <p>Email : contact@clubdetennisdetable.com</p>
-    <h2>Localisation</h2>
-    <!-- Ajouter une carte interactive -->
   </section>
 </main>
 <footer>
@@ -95,8 +103,6 @@
       menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray'); // Couleur des barres du menu-toggle au départ
     }
   });
-
 </script>
 </body>
-
 </html>

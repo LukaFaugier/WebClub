@@ -5,29 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendrier - Club de Tennis de Table</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/VallonPontDArcLogoBalle.png" type="image/png" style="border-radius: 50%;">
 </head>
 <body>
 <header>
     <div class="logo">
-        <a href="index.html" title="Acceuil"><img src="logo.png" alt="Logo du Club" ></a>
+        <a href="index.html" title="Accueil"><img src="images/VallonPontDArcLogoBalle.png" alt="Logo du Club"></a>
+    </div>
+    <div class="menu-container">
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="equipes.html">Équipes</a></li>
+                <li><a href="calendrier.html">Calendrier</a></li>
+                <li><a href="partenaires.html">Partenaires</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </div>
     <div class="menu-toggle" onclick="toggleMenu()">
         <div class="bar1"></div>
         <div class="bar2"></div>
         <div class="bar3"></div>
     </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="apropos.html">À propos</a></li>
-            <li><a href="equipes.html">Équipes</a></li>
-            <li><a href="calendrier.html">Calendrier</a></li>
-            <li><a href="resultats.html">Résultats</a></li>
-            <li><a href="adhesion.html">Adhésion</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
 </header>
+
 
 <main>
     <section id="calendrier">
@@ -57,13 +60,41 @@
     <p>&copy; 2024 Club de Tennis de Table</p>
 </footer>
 <script>
+    const menuToggleBars = document.querySelectorAll('.menu-toggle div');
+    menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray');
     function toggleMenu() {
         const nav = document.querySelector('nav ul');
         const toggle = document.querySelector('.menu-toggle');
         nav.classList.toggle('show');
         toggle.classList.toggle('change');
     }
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        const links = document.querySelectorAll('nav ul li a');
 
+        if (window.scrollY > 0) {
+            header.style.backgroundColor = '#333'; // Couleur du header après défilement
+            links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
+        } else {
+            header.style.backgroundColor = 'transparent'; // Couleur du header au départ
+            links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
+        }
+    });
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        const links = document.querySelectorAll('nav ul li a');
+        const menuToggleBars = document.querySelectorAll('.menu-toggle div');
+
+        if (window.scrollY > 0) {
+            header.style.backgroundColor = '#333'; // Couleur du header après défilement
+            links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
+            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white'); // Couleur des barres du menu-toggle après défilement
+        } else {
+            header.style.backgroundColor = 'transparent'; // Couleur du header au départ
+            links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
+            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray'); // Couleur des barres du menu-toggle au départ
+        }
+    });
 </script>
 </body>
 </html>
