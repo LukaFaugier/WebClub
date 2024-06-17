@@ -13,7 +13,7 @@
         <a href="index.html" title="Accueil"><img src="images/VallonPontDArcLogoBalle.png" alt="Logo du Club"></a>
     </div>
     <div class="menu-container">
-        <nav>
+        <nav style = "color:white;">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="apropos.html">À propos</a></li>
@@ -31,14 +31,12 @@
     </div>
 </header>
 
-
 <main>
     <div class="slider-container">
         <div class="slider">
             <!-- Slider d'images -->
-            <img src="images/image1.jpg" alt="Image 1" class="slide" onclick="openModal();currentSlide(1)">
-            <img src="images/image2.jpg" alt="Image 2" class="slide" onclick="openModal();currentSlide(2)">
-            <img src="images/image3.jpg" alt="Image 3" class="slide" onclick="openModal();currentSlide(3)">
+            <img src="images/Accueil/AccueilImage1.png" alt="Image 1" class="slide" onclick="openModal();currentSlide(1)">
+            <img src="images/Accueil/AccueilImage2.png" alt="Image 2" class="slide" onclick="openModal();currentSlide(2)">
             <button class="prev" onclick="plusSlides(-1)">&#10094;</button>
             <button class="next" onclick="plusSlides(1)">&#10095;</button>
         </div>
@@ -52,93 +50,10 @@
             <div class="mySlides">
                 <img src="images/image2.jpg" style="width:100%">
             </div>
-            <div class="mySlides">
-                <img src="images/image3.jpg" style="width:100%">
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
     </div>
-    <script>
-        // Slider
-        let slideIndex = 0;
-        showSlides();
-        const menuToggleBars = document.querySelectorAll('.menu-toggle div');
-        menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray');
-        function toggleMenu() {
-            const nav = document.querySelector('nav ul');
-            const toggle = document.querySelector('.menu-toggle');
-            nav.classList.toggle('show');
-            toggle.classList.toggle('change');
-        }
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            let modalSlides = document.getElementsByClassName("mySlides");
-            let modal = document.getElementById("myModal");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            for (i = 0; i < modalSlides.length; i++) {
-                modalSlides[i].style.display = "none";
-            }
-            if (modal) {
-                modal.style.display = "none";
-            }
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 5000); // Change l'image toutes les 5 secondes
-        }
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        // Modal
-        function openModal() {
-            document.getElementById("myModal").style.display = "block";
-        }
-
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            const links = document.querySelectorAll('nav ul li a');
-
-            if (window.scrollY > 0) {
-                header.style.backgroundColor = '#333'; // Couleur du header après défilement
-                links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
-            } else {
-                header.style.backgroundColor = 'transparent'; // Couleur du header au départ
-                links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
-            }
-        });
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            const links = document.querySelectorAll('nav ul li a');
-            const menuToggleBars = document.querySelectorAll('.menu-toggle div');
-
-            if (window.scrollY > 0) {
-                header.style.backgroundColor = '#333'; // Couleur du header après défilement
-                links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
-                menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white'); // Couleur des barres du menu-toggle après défilement
-            } else {
-                header.style.backgroundColor = 'transparent'; // Couleur du header au départ
-                links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
-                menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray'); // Couleur des barres du menu-toggle au départ
-            }
-        });
-
-    </script>
-
-    <section id="club-info" >
+    <section id="club-info">
         <h1>Bienvenue au Club de Tennis de Table</h1>
         <p>Le Club de Tennis de Table est dédié à promouvoir ce sport passionnant et à offrir un environnement accueillant pour tous les niveaux.</p>
     </section>
@@ -153,7 +68,7 @@
                 </div>
             </div>
             <div class="service-item">
-                <img src="images/evenement.png" alt="Événements">
+                <img src="images/evenement/even.png" alt="Événements">
                 <div class="text-content">
                     <h3>Événements</h3>
                     <p>Consultez notre calendrier pour les événements à venir.</p>
@@ -169,7 +84,7 @@
         </div>
     </section>
 
-    <section  id="club-info">
+    <section id="club-info">
         <h1>Horaire</h1>
         <table style="margin-left:37%">
             <thead>
@@ -180,7 +95,6 @@
             </tr>
             </thead>
             <tbody>
-            <!-- Ajouter les événements -->
             <tr>
                 <td>Lundi</td>
                 <td>17:00-20:00</td>
@@ -214,8 +128,36 @@
     <p>&copy; 2024 Club de Tennis de Table</p>
 </footer>
 <script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
+    // Slider
+    let slideIndex = 0;
+    showSlides();
+
+    function toggleMenu() {
+        const nav = document.querySelector('nav ul');
+        const toggle = document.querySelector('.menu-toggle');
+        nav.classList.toggle('show');
+        toggle.classList.toggle('change');
+    }
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        let modalSlides = document.getElementsByClassName("mySlides");
+        let modal = document.getElementById("myModal");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < modalSlides.length; i++) {
+            modalSlides[i].style.display = "none";
+        }
+        if (modal) {
+            modal.style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 5000); // Change l'image toutes les 5 secondes
+    }
 
     function plusSlides(n) {
         showSlides(slideIndex += n);
@@ -225,40 +167,31 @@
         showSlides(slideIndex = n);
     }
 
-
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("slide");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slideIndex-1].style.display = "block";
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
     }
 
-
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
 
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         const links = document.querySelectorAll('nav ul li a');
+        const menuToggleBars = document.querySelectorAll('.menu-toggle div');
 
         if (window.scrollY > 0) {
-            header.style.backgroundColor = '#333'; // Couleur du header après défilement
-            links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
-        } else {
-            header.style.backgroundColor = 'transparent'; // Couleur du header au départ
-            links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
-        }
-    });
+            header.style.backgroundColor = '#333';
+            links.forEach(link => link.style.color = 'gray');
+            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white');
 
-    function toggleMenu() {
-        const nav = document.querySelector('nav ul');
-        const toggle = document.querySelector('.menu-toggle');
-        nav.classList.toggle('show');
-        toggle.classList.toggle('change');
-    }
+        }else {
+            header.style.backgroundColor = 'transparent';
+            links.forEach(link => link.style.color = 'white');
+            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white');
+        }
+
+    });
 </script>
 </body>
 </html>
-

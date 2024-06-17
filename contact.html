@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact - Club de Tennis de Table</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="logo.png" type="image/png" style="border-radius: 50%">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <link rel="icon" href="images/VallonPontDArcLogoBalle.png" type="image/png" style="border-radius: 50%;">
+  <style>
+    #map { height: 400px; width: 100%; }
+  </style>
 </head>
 <body>
 <header>
@@ -34,31 +37,45 @@
 
 <main>
   <section id="contact">
-    <h1>Contactez-nous</h1>
-    <p>Pour toute question, n'hésitez pas à nous contacter via le formulaire ci-dessous :</p>
-    <form action="submit_contact.php" method="POST">
-      <label for="nom">Nom:</label>
-      <input type="text" id="nom" name="nom" required>
+    <section id="Acontact">
+      <h1>Contactez-nous</h1>
+      <p>Pour toute question, n'hésitez pas à nous contacter via le formulaire ci-dessous :</p>
+      <form action="submit_contact.php" method="POST">
+        <label for="nom">Nom:</label>
+        <input type="text" id="nom" name="nom" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
 
-      <button type="submit">Envoyer</button>
-    </form>
-    <h2>Informations de contact</h2>
-    <p>Adresse : 123 Rue du Sport, Ville, Pays</p>
-    <p>Téléphone : +33 1 23 45 67 89</p>
-    <p>Email : contact@clubdetennisdetable.com</p>
-    <h2>Localisation</h2>
-    <!-- Ajouter une carte interactive -->
+        <button type="submit">Envoyer</button>
+      </form>
+      <h2>Informations de contact</h2>
+      <p>Adresse : 123 Rue du Sport, Ville, Pays</p>
+      <p>Téléphone : +33 1 23 45 67 89</p>
+      <p>Email : contact@clubdetennisdetable.com</p>
+    </section>
+    <section id="localisation">
+      <h2>Localisation</h2>
+      <div id="map" style="width: 400px; height: 400px; margin: auto;"></div>
+    </section>
   </section>
 </main>
 <footer>
   <p>&copy; 2024 Club de Tennis de Table</p>
 </footer>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  const map = L.map('map').setView([44.40581042427074, 4.400696391592875], 15);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  L.marker([44.40581042427074, 4.400696391592875]).addTo(map)
+          .bindPopup('Club de Tennis de Table VALLON PONT D ARC')
+          .openPopup();
+</script>
 <script>
   const menuToggleBars = document.querySelectorAll('.menu-toggle div');
   menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray');
@@ -68,35 +85,22 @@
     nav.classList.toggle('show');
     toggle.classList.toggle('change');
   }
-  window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    const links = document.querySelectorAll('nav ul li a');
 
-    if (window.scrollY > 0) {
-      header.style.backgroundColor = '#333'; // Couleur du header après défilement
-      links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
-    } else {
-      header.style.backgroundColor = 'transparent'; // Couleur du header au départ
-      links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
-    }
-  });
   window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     const links = document.querySelectorAll('nav ul li a');
     const menuToggleBars = document.querySelectorAll('.menu-toggle div');
 
     if (window.scrollY > 0) {
-      header.style.backgroundColor = '#333'; // Couleur du header après défilement
-      links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
-      menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white'); // Couleur des barres du menu-toggle après défilement
+      header.style.backgroundColor = '#333';
+      links.forEach(link => link.style.color = 'white');
+      menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white');
     } else {
-      header.style.backgroundColor = 'transparent'; // Couleur du header au départ
-      links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
-      menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray'); // Couleur des barres du menu-toggle au départ
+      header.style.backgroundColor = 'transparent';
+      links.forEach(link => link.style.color = 'gray');
+      menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray');
     }
   });
-
 </script>
 </body>
-
 </html>

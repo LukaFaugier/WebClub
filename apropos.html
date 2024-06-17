@@ -33,7 +33,7 @@
 
 <main>
     <section id="apropos">
-        <h1 style=" text-align: center;">À propos de nous</h1>
+        <h1 style="text-align: center;">À propos de nous</h1>
 
         <section class="apropos-section">
             <div class="apropos-text">
@@ -64,7 +64,7 @@
                 <p>Une antenne ouvrira à Ruoms le 9 janvier 2024. Dans le cadre de l’opération « 2 heures de sport en plus au collège » pour les Jeux Olympiques, le club PING VPA va entraîner les élèves du collège de Vallon Pont d’Arc.</p>
             </div>
             <div class="apropos-image">
-                <img src="images/ouverture.jpg" alt="Ouverture">
+                <img src="images/aPropos/ouverture.jpg" alt="Ouverture">
             </div>
         </section>
 
@@ -74,7 +74,7 @@
                 <p>En avril 2023, nous avons accueilli avec succès la finale de la ligue AURA TT. Cette saison, nous allons recevoir le 3ème tour du critérium individuel qualificatif pour la montée en régional.</p>
             </div>
             <div class="apropos-image">
-                <img src="images/sportivite.jpg" alt="Sportivité">
+                <img src="images/aPropos/sportivite.jpg" alt="Sportivité">
             </div>
         </section>
 
@@ -84,7 +84,7 @@
                 <p>Le club PING VPA a ouvert ses portes à l'association BETHANIE et son antenne, Les Chênes Verts, pour les personnes atteintes de handicap pendant le mois de l'intergénérationnalité en octobre 2023. Plus de 10 membres de cette association pratiquent le tennis de table pour la saison 2023/2024. Le club PING VPA est maintenant affilié à la FFSA, Fédération Française du Sport Adapté.</p>
             </div>
             <div class="apropos-image">
-                <img src="images/accessibilite.jpg" alt="Accessibilité">
+                <img src="images/aPropos/accessibilite.jpg" alt="Accessibilité">
             </div>
         </section>
 
@@ -94,7 +94,7 @@
                 <p>PING VPA sera toujours un lieu de convivialité, d’échange et de bonne humeur. Enfin, avec PING FLE, différentes nationalités profitent d'un enseignement du Français et de rencontres avec les joueurs lors des entraînements pour pratiquer notre langue.</p>
             </div>
             <div class="apropos-image">
-                <img src="images/communaute.jpg" alt="Communauté">
+                <img src="images/aPropos/communaute.jpg" alt="Communauté">
             </div>
         </section>
 
@@ -105,7 +105,7 @@
                 <a href="galerie.html">Cliquez ici pour voir les photos de la fête du club PING VPA le 26 mai</a>
             </div>
             <div class="apropos-image">
-                <img src="images/fete.jpg" alt="Fête du Club">
+                <img src="images/aPropos/fete.jpg" alt="Fête du Club">
             </div>
         </section>
     </section>
@@ -126,28 +126,16 @@
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         const links = document.querySelectorAll('nav ul li a');
-
-        if (window.scrollY > 0) {
-            header.style.backgroundColor = '#333'; // Couleur du header après défilement
-            links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
-        } else {
-            header.style.backgroundColor = 'transparent'; // Couleur du header au départ
-            links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
-        }
-    });
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        const links = document.querySelectorAll('nav ul li a');
         const menuToggleBars = document.querySelectorAll('.menu-toggle div');
 
         if (window.scrollY > 0) {
-            header.style.backgroundColor = '#333'; // Couleur du header après défilement
-            links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
-            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white'); // Couleur des barres du menu-toggle après défilement
+            header.style.backgroundColor = '#333';
+            links.forEach(link => link.style.color = 'white');
+            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white');
         } else {
-            header.style.backgroundColor = 'transparent'; // Couleur du header au départ
-            links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
-            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray'); // Couleur des barres du menu-toggle au départ
+            header.style.backgroundColor = 'transparent';
+            links.forEach(link => link.style.color = 'gray');
+            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white');
         }
     });
 

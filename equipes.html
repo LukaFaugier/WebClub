@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Équipes - Club de Tennis de Table</title>
+    <title>Équipe Dirigeante - Club de Tennis de Table</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/VallonPontDArcLogoBalle.png" type="image/png" style="border-radius: 50%;">
 </head>
@@ -17,7 +17,7 @@
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="apropos.html">À propos</a></li>
-                <li><a href="equipes.html">Équipes</a></li>
+                <li><a href="equipes.html">Équipe</a></li>
                 <li><a href="calendrier.html">Calendrier</a></li>
                 <li><a href="partenaires.html">Partenaires</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -31,53 +31,46 @@
     </div>
 </header>
 
-
 <main>
-    <section id="equipes">
-        <h1>Nos équipes</h1>
-        <div class="equipe">
-            <h2>Équipe Senior</h2>
-            <p>Description de l'équipe senior.</p>
-            <!-- Ajouter des profils de joueurs -->
+    <section id="equipe-dirigeante">
+        <h1>Équipe Dirigeante</h1>
+        <div class="president membre">
+            <img src="images/aPropos/president.jpg" alt="Président">
+            <div class="description">Nom du Président - Description</div>
         </div>
-        <div class="equipe">
-            <h2>Équipe Junior</h2>
-            <p>Description de l'équipe junior.</p>
-            <!-- Ajouter des profils de joueurs -->
+        <div class="membres">
+            <div class="membre">
+                <img src="images/VallonPontDArcLogoBalle.png" alt="Vice-président">
+                <div class="description">Nom du Vice-président - Description</div>
+            </div>
+            <div class="membre">
+                <img src="images/VallonPontDArcLogoBalle.png" alt="Secrétaire">
+                <div class="description">Nom du Secrétaire - Description</div>
+            </div>
+            <div class="membre">
+                <img src="images/VallonPontDArcLogoBalle.png" alt="Trésorier">
+                <div class="description">Nom du Trésorier - Description</div>
+            </div>
+            <div class="membre">
+                <img src="images/VallonPontDArcLogoBalle.png" alt="Membre 1">
+                <div class="description">Nom du Membre 1 - Description</div>
+            </div>
+            <div class="membre">
+                <img src="images/VallonPontDArcLogoBalle.png" alt="Membre 2">
+                <div class="description">Nom du Membre 2 - Description</div>
+            </div>
+            <div class="membre">
+                <img src="images/VallonPontDArcLogoBalle.png" alt="Membre 3">
+                <div class="description">Nom du Membre 3 - Description</div>
+            </div>
+            <div class="membre">
+                <img src="images/VallonPontDArcLogoBalle.png" alt="Membre 4">
+                <div class="description">Nom du Membre 4 - Description</div>
+            </div>
         </div>
-        <div class="equipe">
-            <h2>Équipe Senior</h2>
-            <p>Description de l'équipe senior.</p>
-            <!-- Ajouter des profils de joueurs -->
-        </div>
-        <div class="equipe">
-            <h2>Équipe Junior</h2>
-            <p>Description de l'équipe junior.</p>
-            <!-- Ajouter des profils de joueurs -->
-        </div>
-        <div class="equipe">
-            <h2>Équipe Senior</h2>
-            <p>Description de l'équipe senior.</p>
-            <!-- Ajouter des profils de joueurs -->
-        </div>
-        <div class="equipe">
-            <h2>Équipe Junior</h2>
-            <p>Description de l'équipe junior.</p>
-            <!-- Ajouter des profils de joueurs -->
-        </div>
-        <div class="equipe">
-            <h2>Équipe Senior</h2>
-            <p>Description de l'équipe senior.</p>
-            <!-- Ajouter des profils de joueurs -->
-        </div>
-        <div class="equipe">
-            <h2>Équipe Junior</h2>
-            <p>Description de l'équipe junior.</p>
-            <!-- Ajouter des profils de joueurs -->
-        </div>
-        <!-- Ajouter d'autres équipes si nécessaire -->
     </section>
 </main>
+
 <footer>
     <p>&copy; 2024 Club de Tennis de Table</p>
 </footer>
@@ -90,34 +83,22 @@
         nav.classList.toggle('show');
         toggle.classList.toggle('change');
     }
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        const links = document.querySelectorAll('nav ul li a');
 
-        if (window.scrollY > 0) {
-            header.style.backgroundColor = '#333'; // Couleur du header après défilement
-            links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
-        } else {
-            header.style.backgroundColor = 'transparent'; // Couleur du header au départ
-            links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
-        }
-    });
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
         const links = document.querySelectorAll('nav ul li a');
         const menuToggleBars = document.querySelectorAll('.menu-toggle div');
 
         if (window.scrollY > 0) {
-            header.style.backgroundColor = '#333'; // Couleur du header après défilement
-            links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
-            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white'); // Couleur des barres du menu-toggle après défilement
+            header.style.backgroundColor = '#333';
+            links.forEach(link => link.style.color = 'white');
+            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white');
         } else {
-            header.style.backgroundColor = 'transparent'; // Couleur du header au départ
-            links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
-            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray'); // Couleur des barres du menu-toggle au départ
+            header.style.backgroundColor = 'transparent';
+            links.forEach(link => link.style.color = 'gray');
+            menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white');
         }
     });
-
 </script>
 </body>
 </html>

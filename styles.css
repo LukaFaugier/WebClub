@@ -4,25 +4,60 @@ body, html {
     padding: 0;
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
+    text-align: center;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent; /* Commencer avec un fond transparent */
+    background-color: transparent;
     padding: 10px 20px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.3s ease; /* Transition douce pour le changement de couleur */
+    transition: background-color 0.3s ease;
 }
 
 .menu-container {
     flex: 1;
     display: flex;
+    overflow: hidden;
     justify-content: center;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+.menu-container .text-content {
+    text-align: center;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+.menu-container:hover .text-content{
+    filter: brightness(50%);
+}
+.menu-item {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.menu-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: transparent;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.menu-item:hover::before {
+    visibility: visible;
+    background-color: #333;
+    transform: scaleX(1);
 }
 
 nav ul {
@@ -34,9 +69,10 @@ nav ul {
 }
 
 nav ul li a {
-    color: gray; /* Couleur initiale du texte */
+    color: gray;
     text-decoration: none;
-    transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+    transition: color 0.3s ease;
+    font-weight: bolder;
 }
 
 .menu-toggle {
@@ -56,21 +92,21 @@ nav ul li a {
 .logo {
     flex-grow: 0;
     position: relative;
-    margin-top: -8px; /* Décalage vers le haut */
-    top: -10%; /* Décalage de 10% vers le haut */
+    margin-top: -8px;
+    top: -10%;
 }
 
 .logo img {
-    width: 80px; /* Ajustez cette taille selon vos besoins */
-    height: 80px; /* Ajustez cette taille selon vos besoins */
-    border-radius: 50%; /* Cela rend l'image circulaire */
-    object-fit: cover; /* Assure que l'image s'adapte bien à la forme circulaire */
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .slider-container, .slider {
     position: relative;
     width: 100%;
-    margin-top: 100px; /* Ajoutez cette marge supérieure pour compenser la hauteur de l'en-tête fixe */
+    margin-top: -125px;
 }
 
 .slider img {
@@ -83,7 +119,6 @@ nav ul li a {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
     border: none;
     cursor: pointer;
 }
@@ -98,7 +133,7 @@ nav ul li a {
 
 main {
     padding: 20px;
-    margin-top: 100px; /* Ajoutez cette marge supérieure pour compenser la hauteur de l'en-tête fixe */
+    margin-top: 100px;
 }
 
 h1, h2 {
@@ -159,8 +194,170 @@ footer {
     opacity: 1;
 }
 
-/* Styles pour appareils de petite taille (téléphones) */
+.apropos-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.apropos-section:nth-child(odd) .apropos-text {
+    order: 2;
+}
+
+.apropos-section:nth-child(odd) .apropos-image {
+    order: 1;
+}
+
+.apropos-section:nth-child(even) .apropos-text {
+    order: 1;
+}
+
+.apropos-section:nth-child(even) .apropos-image {
+    order: 2;
+}
+
+.apropos-section .apropos-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.apropos-section .apropos-image {
+    flex: 1;
+    text-align: center;
+}
+
+/* Taille fixe pour les images dans la section À propos */
+.apropos-section .apropos-image img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: -1;
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+nav ul li a:hover::before {
+    visibility: visible;
+    background-color: black;
+    border-color: green;
+    transform: scaleX(1);
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+
+#Acontact {
+    background-color: #9a9898; /* Gris clair */
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#localisation {
+    background-color: #e0e0e0; /* Gris plus foncé */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#equipe-dirigeante {
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+}
+
+.president {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+.membres {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    justify-items: center;
+}
+
+.membre {
+    position: relative;
+    text-align: center;
+}
+
+.membre img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.membre:hover img {
+    transform: scale(1.2);
+}
+
+.membre:hover .description {
+    display: block;
+}
+
+.description {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 200px;
+    z-index: 10;
+}
+
+
+
+
+@media (max-width: 1200px ){
+    #Acontact {
+        margin: auto;
+    }
+    #localisation {
+        margin: auto;
+    }
+}
+/* Responsive pour la section À propos */
 @media (max-width: 768px) {
+    .membres {
+        grid-template-columns: repeat(2, 1fr);
+    }
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -170,6 +367,7 @@ footer {
         display: flex;
         order: 2;
         margin-right: 5%;
+        color: dimgray;
     }
 
     .logo {
@@ -182,6 +380,7 @@ footer {
     }
 
     nav {
+        color: white;
         order: 3;
         width: 100%;
     }
@@ -192,9 +391,9 @@ footer {
         width: 100%;
         padding: 0;
         position: fixed;
-        top: 60px;
+        top: 85px;
         left: 0;
-        background-color: darkgray;
+        background-color: #333333;
         z-index: 1000;
         max-height: 0;
         overflow: hidden;
@@ -203,7 +402,7 @@ footer {
 
     nav ul.show {
         display: flex;
-        max-height: 500px; /* Ajuster cette valeur en fonction du nombre d'éléments du menu */
+        max-height: 500px;
     }
 
     nav ul li {
@@ -214,6 +413,12 @@ footer {
     nav ul li a {
         display: block;
         padding: 10px;
+    }
+
+    .slider-container, .slider {
+        position: relative;
+        width: 100%;
+        margin-top: -50px;
     }
 
     .menu-toggle.change .bar1 {
@@ -228,9 +433,63 @@ footer {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
-    main {
-        margin-top: 120px; /* Ajustez cette marge pour compenser la hauteur du header sur les petits écrans */
+
+
+    .apropos-section {
+        flex-direction: column;
     }
+
+    .apropos-section .apropos-text, .apropos-section .apropos-image {
+        order: initial;
+        padding: 10px;
+    }
+
+    .apropos-section .apropos-text {
+        order: 1;
+    }
+
+    .apropos-section .apropos-image {
+        order: 2;
+    }
+
+
+
+    .apropos-section {
+        display: flex;
+        align-items: center;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .apropos-section:nth-child(odd) .apropos-text {
+        order: 1;
+    }
+
+    .apropos-section:nth-child(odd) .apropos-image {
+        order: 1;
+    }
+
+    .apropos-section:nth-child(even) .apropos-text {
+        order: 1;
+    }
+
+    .apropos-section:nth-child(even) .apropos-image {
+        order: 1;
+    }
+
+    .apropos-section .apropos-text {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .apropos-section .apropos-image {
+        flex: 1;
+        text-align: center;
+    }
+    main {
+        margin-top: 120px;
+    }
+
 }
 
 @media (max-width: 450px) {
@@ -238,11 +497,13 @@ footer {
         flex-direction: row;
         justify-content: space-between;
     }
-
+    #equipe-dirigeante {
+        grid-template-columns: 1fr;
+    }
     .menu-toggle {
         display: flex;
         order: 2;
-        margin-right: 5%;
+        margin-right: 7%;
     }
 
     .logo {
@@ -255,45 +516,14 @@ footer {
     }
 
     main {
-        margin-top: 120px; /* Ajustez cette marge pour compenser la hauteur du header sur les petits écrans */
+        margin-top: 120px;
     }
 }
 
-/* Section À propos */
-.apropos-section {
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.apropos-section:nth-child(even) .apropos-text {
-    order: 2;
-}
-
-.apropos-section .apropos-text {
-    flex: 1;
-    padding: 20px;
-}
-
-.apropos-section .apropos-image {
-    flex: 1;
-    text-align: center;
-}
-
-.apropos-section .apropos-image img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-
-/* Responsive pour la section À propos */
-@media (max-width: 768px) {
-    .apropos-section {
-        flex-direction: column;
-    }
-
-    .apropos-section .apropos-text, .apropos-section .apropos-image {
-        order: initial;
-        padding: 10px;
-    }
+/* Styles pour la carte */
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    border: 2px solid #333;
 }

@@ -94,13 +94,13 @@
     const menuToggleBars = document.querySelectorAll('.menu-toggle div');
 
     if (window.scrollY > 0) {
-      header.style.backgroundColor = '#333'; // Couleur du header après défilement
-      links.forEach(link => link.style.color = 'white'); // Couleur du texte après défilement
-      menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white'); // Couleur des barres du menu-toggle après défilement
+      header.style.backgroundColor = '#333';
+      links.forEach(link => link.style.color = 'white');
+      menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white');
     } else {
-      header.style.backgroundColor = 'transparent'; // Couleur du header au départ
-      links.forEach(link => link.style.color = 'gray'); // Couleur du texte au départ
-      menuToggleBars.forEach(bar => bar.style.backgroundColor = 'gray'); // Couleur des barres du menu-toggle au départ
+      header.style.backgroundColor = 'transparent';
+      links.forEach(link => link.style.color = 'gray');
+      menuToggleBars.forEach(bar => bar.style.backgroundColor = 'white');
     }
   });
 </script>
