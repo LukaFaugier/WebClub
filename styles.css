@@ -105,8 +105,11 @@ nav ul li a {
 
 .slider-container, .slider {
     position: relative;
-    width: 100%;
+    
     margin-top: -125px;
+    margin-left:-20px;
+    margin-right:-100px;
+    height:100%;
 }
 
 .slider img {
